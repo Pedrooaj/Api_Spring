@@ -20,9 +20,29 @@ public class ProdutoRepository {
         return produtos;
     }
 
-    // Optional para retornar nullo ou produto
+    // Optional para retornar nulo ou produto
     public Optional<Produto> findById(Long id) {
         return produtos.stream().filter(p -> p.getId().equals(id)).findFirst();
     }
 
+    public Produto save(Produto produto){
+        produto.setId(nextId++);
+        produtos.add(produto);  
+        return produto;
+    }
+
+    public Produto update(Produto produto){
+        return produtos.stream()
+                .filter(p -> p.getId().equals(produto.getId()))
+                .findFirst().map(p -> {
+                    p.setNome(produto.getNome());
+                    p.setPreco(produto.getPreco());
+                    p.setnSerie(produto.getnSerie());
+                    return p;
+                }).orElseThrow(() -> new RuntimeException("Produto não encontrado para atualização"));
+    }
+
+    public void deleteById(Long id){
+        produtos.removeIf(p -> p.getId().equals(id));
+    }
 }
