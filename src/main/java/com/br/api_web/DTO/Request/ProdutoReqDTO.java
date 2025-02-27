@@ -3,7 +3,7 @@ package com.br.api_web.DTO.Request;
 public class ProdutoReqDTO {
     private String nome;
     private double preco;
-    private String nSerie;
+    private String numeroSerie;
 
 
     public ProdutoReqDTO(){}
@@ -11,7 +11,7 @@ public class ProdutoReqDTO {
     public ProdutoReqDTO(String nome, double preco, String nSerie){
         this.nome = nome;
         this.preco = preco;
-        this.nSerie = nSerie;
+        this.numeroSerie = nSerie;
     }
 
     public void setNome(String nome) {
@@ -21,7 +21,7 @@ public class ProdutoReqDTO {
         this.preco = preco;
     }
     public void setnSerie(String nSerie) {
-        this.nSerie = nSerie;
+        this.numeroSerie = nSerie;
     }
 
     
@@ -32,7 +32,7 @@ public class ProdutoReqDTO {
         return preco;
     }
     public String getnSerie() {
-        return nSerie;
+        return numeroSerie;
     }
 
 }
