@@ -8,11 +8,7 @@ public class Produto {
     private String nome;
     private double preco;
     private String nSerie;
-    
-    
-    public Produto(){
-
-    }
+       public Produto(){}
 
     public Produto(Long id, String nome, double preco, String nSerie){
         this.id = id;
