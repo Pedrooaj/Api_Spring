@@ -27,7 +27,6 @@ public class ProdutoService {
         return new ProdutoResDTO(produto.getId(), produto.getNome(), produto.getPreco());
     }
 
-
     public ProdutoResDTO postProduct(ProdutoReqDTO produto){
         Produto novoProduto = new Produto(null, produto.getNome(), produto.getPreco(), produto.getnSerie());
         Produto produtoSalvo = produtoRepository.save(novoProduto);
@@ -46,6 +45,6 @@ public class ProdutoService {
     }
 
     public void deleteProduct(Long id){
-
+        produtoRepository.deleteById(id);
     }
 }
